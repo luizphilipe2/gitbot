@@ -1,33 +1,39 @@
 version: "3.1"
 
 intents:
-  - greet
-  - goodbye
-  - affirm
-  - deny
-  - mood_great
-  - mood_unhappy
-  - bot_challenge
-
+  - introducao
+  - pergunta_se_iniciante_no_projeto
+  - ja_trabalhou_no_projeto
+  - nunca_trabalhou_no_projeto
+  - pergunta_se_consegue_trabalhar_na_tarefa
+  - pergunta_se_gostaria_de_mais_opcoes  
+  - afirmar
+  - negar
+  - tchau
+  
 responses:
-  utter_greet:
-  - text: "Hey! How are you?"
+  utter_introducao:
+  - text: "Olá, sou o gitbot. Um chatbot para te auxiliar no processo de escolha de tarefas."
 
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
+  utter_pergunta_se_iniciante_no_projeto:
+  - text: "Você já trabalhou com o projeto JabRef antes?"
 
-  utter_did_that_help:
-  - text: "Did that help you?"
+  utter_ja_trabalhou_no_projeto:
+  - text: "Perfeito! Vou te mostrar algumas atividades separadas por rótulos. Quais dessas te interessa mais?"
+#mostrar as 5 labels com mais atividades disponíveis
 
-  utter_happy:
-  - text: "Great, carry on!"
+  utter_nunca_trabalhou_no_projeto:
+  - text: "Não tem problema, vamos começar pelas atividades indicadas para novatos. Quais dessas te interessa mais?"
+#mostrar atividades da label good_first_issue
 
-  utter_goodbye:
-  - text: "Bye"
+  utter_pergunta_se_consegue_trabalhar_na_tarefa:
+  - text: "Você acha que consegue seguir nessa atividade?"
 
-  utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
+  utter_pergunta_se_gostaria_de_mais_opcoes:
+  - text: "Você gostaria de mais opções?"
+
+  utter_tchau:
+  - text: "Até logo!"
 
 session_config:
   session_expiration_time: 60
