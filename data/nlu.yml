@@ -1,57 +1,114 @@
 version: "3.1"
 
 nlu:
-- intent: afirmar
+- intent: greet
   examples: |
-    - sim
-    - s
-    - isso
-    - com certeza
-    - certamente
-    - opa
-    - agora
-    - prá já
-    - aham
-    - yep
-    - isso mesmo
-    - quero sim
-    - afirmativo
-    - tenho interesse
-    - gostaria
-    - quero
-    - exato
-    - exatamente
-
-- intent: negar
-  examples: |
-    - não
-    - n
-    - nunca
-    - necas
-    - negativo
-    - negado
-    - nop
-    - não quero
-    - não interessa
-    - não mesmo
-    - deixa para próxima
-    - de jeito nenhum
-    - nem
-
-- intent: introducao
-  examples: |
-    - olá
-    - ola
     - oi
-    - oie
-    - opa
+    - olá
+    - hey
     - bom dia
     - boa tarde
     - boa noite
-    - tudo bem?
-    - tudo certo?
-    - gitbot
-    - eae
-    - salve
-    - Ola
-    - hey
+
+- intent: user_is_beginner
+  examples: |
+    - sou iniciante
+    - sim
+    - é minha primeira vez
+    - sim, sou novo
+    - sim, sou iniciante
+    - sou novo aqui
+    - comecei agora
+
+- intent: user_is_not_beginner
+  examples: |
+    - não
+    - não sou iniciante
+    - não, já tenho experiência
+    - já conheço o projeto
+    - sou experiente
+    - não sou novo
+
+- intent: user_ask_labels_activities
+  examples: |
+    - quais são as labels com mais atividades?
+    - quais são as labels mais ativas?
+    - quais são as labels com mais tarefas?
+    - mostre as labels com mais atividades
+    - me mostre as labels mais ativas
+    - labels com mais atividades
+    - labels mais ativas
+
+- intent: user_choose_label
+  examples: |
+    - quero ver a label {label}
+    - escolho a label {label}
+    - mostrar issues da label {label}
+    - quero informações sobre a label {label}
+    - issues da label {label}
+    - {label}
+    - {label} por favor
+
+- intent: inform_no_label_choice
+  examples: |
+    - não escolhi nenhuma label
+    - nenhuma label em particular
+    - não quero ver nenhuma label
+    - não selecionei nenhuma label
+    - nada específico
+
+#- intent: afirmar
+#  examples: |
+#    - sim
+#    - s
+#    - isso
+#    - com certeza
+#    - certamente
+#    - opa
+#    - agora
+#    - prá já
+#    - aham
+#    - yep
+#    - isso mesmo
+#    - quero sim
+#    - afirmativo
+#    - tenho interesse
+#    - gostaria
+#    - quero
+#    - exato
+#    - exatamente
+#
+#- intent: negar
+#  examples: |
+#    - não
+#    - n
+#    - nunca
+#    - necas
+#    - negativo
+#    - negado
+#    - nop
+#    - não quero
+#    - não interessa
+#    - não mesmo
+#    - deixa para próxima
+#    - de jeito nenhum
+#    - nem
+#
+#- intent: introducao
+#  examples: |
+#    - olá
+#    - ola
+#    - oi
+#    - oie
+#    - opa
+#    - bom dia
+#    - boa tarde
+#    - boa noite
+#    - tudo bem?
+#    - tudo certo?
+#    - gitbot
+#    - eae
+#    - salve
+#    - Ola
+#    - hey
+#

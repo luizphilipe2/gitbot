@@ -1,22 +1,37 @@
 version: "3.1"
 
 intents:
-  - introducao
-  - pergunta_se_iniciante_no_projeto
-  - ja_trabalhou_no_projeto
-  - nunca_trabalhou_no_projeto
-  - pergunta_se_consegue_trabalhar_na_tarefa
-  - pergunta_se_gostaria_de_mais_opcoes  
-  - afirmar
-  - negar
+  - greet
+  - user_is_beginner
+  - user_is_not_beginner
+  - user_ask_labels_activities
+  - user_choose_label
+  - inform_no_label_choice
+  - user_ask_good_first_issues
   - tchau
-  
+
+entities:
+  - label
+
+actions:
+  - action_welcome_user
+  - action_get_top_labels
+  - action_get_issues_by_label
+  - action_get_good_first_issues
+  - action_goodbye_user
+
 responses:
-  utter_introducao:
-  - text: "Olá, sou o gitbot. Um chatbot para te auxiliar no processo de escolha de tarefas."
+  utter_greet:
+    - text: "Olá, sou o gitbot. Um chatbot para te auxiliar no processo de escolha de tarefas."
+
+  utter_goodbye_user:
+    - text: "Até logo! Se precisar de mais ajuda, estou aqui."
 
   utter_pergunta_se_iniciante_no_projeto:
-  - text: "Você já trabalhou com o projeto JabRef antes?"
+    - text: "Você já trabalhou com o projeto JabRef antes?"
+
+  utter_introducao:
+  - text: "Olá, sou o gitbot. Um chatbot para te auxiliar no processo de escolha de tarefas."
 
   utter_ja_trabalhou_no_projeto:
   - text: "Perfeito! Vou te mostrar algumas atividades separadas por rótulos. Quais dessas te interessa mais?"
@@ -35,6 +50,25 @@ responses:
   utter_tchau:
   - text: "Até logo!"
 
+slots:
+  label:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: label
+
+forms: {}
+
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
+
+#intents:
+#  - introducao
+#  - pergunta_se_iniciante_no_projeto
+#  - ja_trabalhou_no_projeto
+#  - nunca_trabalhou_no_projeto
+#  - pergunta_se_consegue_trabalhar_na_tarefa
+#  - pergunta_se_gostaria_de_mais_opcoes  
+#  - afirmar
+#  - negar

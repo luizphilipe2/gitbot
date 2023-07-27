@@ -2,7 +2,29 @@ version: "3.1"
 
 rules:
 
-- rule: Dar tchau sempre que o usuário dizer tchau
+#- rule: Dar tchau sempre que o usuário dizer tchau
+#  steps:
+#  - intent: tchau
+#  - action: utter_tchau
+
+- rule: Exibir labels com mais atividades
   steps:
-  - intent: tchau
-  - action: utter_tchau
+  - intent: user_ask_labels_activities
+  - action: action_get_top_labels
+
+- rule: Exibir atividades com label "Good First Issue"
+  steps:
+  - intent: user_ask_good_first_issues
+  - action: action_get_good_first_issues
+
+- rule: Exibir atividades por label escolhida
+  steps:
+  - intent: user_choose_label
+  - action: action_get_issues_by_label
+
+- rule: Bem-vindo ao usuário no início da sessão & pergunta se conhece o projeto JabRef
+  conversation_start: true
+  steps:
+  - action: utter_welcome
+  - action: utter_pergunta_se_iniciante_no_projeto
+  - action: action_listen

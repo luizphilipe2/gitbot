@@ -2,29 +2,41 @@ version: "3.1"
 
 stories:
 
-- story: happy path
+# Caminho feliz - Usuário é iniciante no projeto
+- story: Caminho feliz - Usuário é iniciante no projeto
   steps:
   - intent: greet
-  - action: utter_greet
-  - intent: mood_great
-  - action: utter_happy
+  - action: action_welcome_user
+  - action: utter_pergunta_se_iniciante_no_projeto
+  - intent: user_is_beginner
+  - action: action_get_top_labels
+  - intent: user_choose_label
+  - action: action_get_issues_by_label
 
-- story: sad path 1
+# Caminho feliz - Usuário não é iniciante no projeto
+- story: Caminho feliz - Usuário não é iniciante no projeto
   steps:
   - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: affirm
-  - action: utter_happy
+  - action: action_welcome_user
+  - intent: user_is_not_beginner
+  - action: action_get_top_labels
+  - intent: user_choose_label
+  - action: action_get_issues_by_label
 
-- story: sad path 2
+# Caminho alternativo - Usuário é iniciante e escolhe "Good First Issue"
+- story: Caminho alternativo - Usuário é iniciante e escolhe "Good First Issue"
   steps:
   - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: deny
-  - action: utter_goodbye
+  - action: action_welcome_user
+  - intent: user_is_beginner
+  - action: action_get_good_first_issues
+
+# Caminho alternativo - Usuário não escolhe nenhuma label
+- story: Caminho alternativo - Usuário não escolhe nenhuma label
+  steps:
+  - intent: greet
+  - action: action_welcome_user
+  - intent: user_is_beginner
+  - action: action_get_top_labels
+  - intent: inform_no_label_choice
+  - action: action_goodbye_user
