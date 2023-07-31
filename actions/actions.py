@@ -132,7 +132,7 @@ class ActionWelcomeUser(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        dispatcher.utter_message(response="utter_greet")
+        dispatcher.utter_message(response="utter_greet")   
         return []
     
 class ActionGoodbyeUser(Action):

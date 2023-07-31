@@ -2,13 +2,12 @@ version: "3.1"
 
 intents:
   - greet
-  - user_is_beginner
-  - user_is_not_beginner
+  - affirm
+  - deny
   - user_ask_labels_activities
   - user_choose_label
   - inform_no_label_choice
-  - user_ask_good_first_issues
-  - tchau
+  - bye
 
 entities:
   - label
@@ -27,19 +26,16 @@ responses:
   utter_goodbye_user:
     - text: "Até logo! Se precisar de mais ajuda, estou aqui."
 
-  utter_pergunta_se_iniciante_no_projeto:
-    - text: "Você já trabalhou com o projeto JabRef antes?"
+  utter_ask_experience:
+  - text: "Você já trabalhou com o projeto JabRef antes?"
 
-  utter_introducao:
-  - text: "Olá, sou o gitbot. Um chatbot para te auxiliar no processo de escolha de tarefas."
-
-  utter_ja_trabalhou_no_projeto:
+  utter_experienced_user:
   - text: "Perfeito! Vou te mostrar algumas atividades separadas por rótulos. Quais dessas te interessa mais?"
-#mostrar as 5 labels com mais atividades disponíveis
+  #mostrar as 5 labels com mais atividades disponíveis
 
-  utter_nunca_trabalhou_no_projeto:
+  utter_new_user:
   - text: "Não tem problema, vamos começar pelas atividades indicadas para novatos. Quais dessas te interessa mais?"
-#mostrar atividades da label good_first_issue
+  #mostrar atividades da label good_first_issue
 
   utter_pergunta_se_consegue_trabalhar_na_tarefa:
   - text: "Você acha que consegue seguir nessa atividade?"

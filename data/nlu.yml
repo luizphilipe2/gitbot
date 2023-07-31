@@ -9,25 +9,69 @@ nlu:
     - bom dia
     - boa tarde
     - boa noite
+    - olá
+    - ola
+    - oi
+    - oie
+    - opa
+    - bom dia
+    - boa tarde
+    - boa noite
+    - tudo bem?
+    - tudo certo?
+    - gitbot
+    - eae
+    - salve
+    - Ola
+    - hey
 
-- intent: user_is_beginner
+- intent: affirm
   examples: |
-    - sou iniciante
+    - Sim
+    - Sim, eu já trabalhei.
+    - Sim, eu conheço o projeto JabRef.
+    - Sim, eu tenho experiência com o JabRef.
     - sim
-    - é minha primeira vez
-    - sim, sou novo
-    - sim, sou iniciante
-    - sou novo aqui
-    - comecei agora
+    - s
+    - isso
+    - com certeza
+    - certamente
+    - opa
+    - agora
+    - prá já
+    - aham
+    - yep
+    - isso mesmo
+    - quero sim
+    - afirmativo
+    - tenho interesse
+    - gostaria
+    - quero
+    - exato
+    - exatamente
 
-- intent: user_is_not_beginner
+- intent: deny
   examples: |
+    - Não
+    - Não, eu nunca trabalhei.
+    - Não, eu não conheço o projeto JabRef.
+    - Não, eu não tenho experiência com o JabRef.
+    - é minha primeira vez
+    - sou iniciante
+    - sou novato
     - não
-    - não sou iniciante
-    - não, já tenho experiência
-    - já conheço o projeto
-    - sou experiente
-    - não sou novo
+    - n
+    - nunca
+    - necas
+    - negativo
+    - negado
+    - nop
+    - não quero
+    - não interessa
+    - não mesmo
+    - deixa para próxima
+    - de jeito nenhum
+    - nem
 
 - intent: user_ask_labels_activities
   examples: |
@@ -41,13 +85,12 @@ nlu:
 
 - intent: user_choose_label
   examples: |
-    - quero ver a label {label}
-    - escolho a label {label}
-    - mostrar issues da label {label}
-    - quero informações sobre a label {label}
-    - issues da label {label}
-    - {label}
-    - {label} por favor
+    - Eu escolho a label [documentation](label)
+    - Minha escolha é a label [bug](label)
+    - Quero trabalhar com a label [enhancement](label)
+    - A label [documentation](label) me interessa
+    - Eu fico com a [bug](label)
+    - Vou de [enhancement](label)
 
 - intent: inform_no_label_choice
   examples: |
@@ -57,58 +100,12 @@ nlu:
     - não selecionei nenhuma label
     - nada específico
 
-#- intent: afirmar
-#  examples: |
-#    - sim
-#    - s
-#    - isso
-#    - com certeza
-#    - certamente
-#    - opa
-#    - agora
-#    - prá já
-#    - aham
-#    - yep
-#    - isso mesmo
-#    - quero sim
-#    - afirmativo
-#    - tenho interesse
-#    - gostaria
-#    - quero
-#    - exato
-#    - exatamente
-#
-#- intent: negar
-#  examples: |
-#    - não
-#    - n
-#    - nunca
-#    - necas
-#    - negativo
-#    - negado
-#    - nop
-#    - não quero
-#    - não interessa
-#    - não mesmo
-#    - deixa para próxima
-#    - de jeito nenhum
-#    - nem
-#
-#- intent: introducao
-#  examples: |
-#    - olá
-#    - ola
-#    - oi
-#    - oie
-#    - opa
-#    - bom dia
-#    - boa tarde
-#    - boa noite
-#    - tudo bem?
-#    - tudo certo?
-#    - gitbot
-#    - eae
-#    - salve
-#    - Ola
-#    - hey
-#
+- intent: bye
+  examples: | 
+    - tchau
+    - até mais
+    - até logo
+    - flw
+    - vlw
+    - até
+    - tmj
